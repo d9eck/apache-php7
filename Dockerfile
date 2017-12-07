@@ -97,6 +97,11 @@ RUN chmod +x /usr/local/bin/docker-php-ext-*
 WORKDIR /var/www/html
 
 EXPOSE 80
+EXPOSE 443
+
+RUN a2enmod ssl
+
+COPY marypeckceramics.* /etc/ssl/private/
 
 CMD ["/sbin/my_init"]
 
